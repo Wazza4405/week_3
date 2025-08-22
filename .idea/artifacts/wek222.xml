@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wek222">
+    <output-path>$PROJECT_DIR$/out/artifacts/wek222</output-path>
+    <root id="root">
+      <element id="module-output" name="week2" />
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+    </root>
+  </artifact>
+</component>
