@@ -18,5 +18,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.108" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="servlet-api" level="project" />
   </component>
 </module>
