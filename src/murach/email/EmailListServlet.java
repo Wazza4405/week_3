@@ -1,14 +1,14 @@
-
 package murach.email;
 
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
 import murach.business.User;
 import murach.data.UserDB;
 
-
+@WebServlet("/emailList")
 public class EmailListServlet extends HttpServlet {
 
     @Override
@@ -24,7 +24,7 @@ public class EmailListServlet extends HttpServlet {
             action = "join";   // mặc định
         }
 
-        //  hướng theo action
+        // hướng theo action
         if (action.equals("join")) {
             url = "/index.html";   // hiển thị form
         }

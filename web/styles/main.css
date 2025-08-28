@@ -1,6 +1,6 @@
-
 body {
-    font-family: Arial, Helvetica, sans-serif; font-size: 11pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
     margin-left: 2em;
     margin-right: 2em;
 }
@@ -9,17 +9,14 @@ h1 {
 }
 label {
     float: left;
-    width: 6em;
+    width: 10em;
     margin-bottom: 0.5em;
 }
-
-input[type="text"], input[type="email"] { width: 15em;
+input[type="text"], input[type="email"] {
+    width: 15em;
     margin-left: 0.5em;
     margin-bottom: 0.5em;
 }
 br {
     clear: both;
 }
-
-#submit {
-    margin-left: 0.5em; }
