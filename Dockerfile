@@ -1,16 +1,14 @@
-# Sử dụng Tomcat 9 với JDK 17
 FROM tomcat:9.0-jdk17
 
-# Xóa ứng dụng mặc định của Tomcat (ROOT)
+# Xóa webapp mặc định
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy file WAR đã build vào Tomcat
+# Copy WAR
 COPY target/week2-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expose port 8080
-EXPOSE 8080
+# Render cấp PORT động qua biến môi trường
+ENV PORT=8080
+EXPOSE ${PORT}
 
-# Chạy Tomcat
-CMD ["catalina.sh", "run"]
-
-
+# Config Tomcat để dùng PORT động
+CMD ["sh", "-c", "sed -i 's/8080/${PORT}/' /usr/local/tomcat/conf/server.xml && catalina.sh run"]
