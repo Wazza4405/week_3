@@ -4,11 +4,13 @@ FROM tomcat:9.0-jdk17
 # Xóa ứng dụng mặc định của Tomcat (ROOT)
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy file WAR vào thư mục webapps
-COPY target/week3.war /usr/local/tomcat/webapps/ROOT.war
+# Copy file WAR đã build vào Tomcat
+COPY target/week2-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Tomcat sẽ tự động deploy ROOT.war khi container khởi động
+# Expose port 8080
 EXPOSE 8080
 
+# Chạy Tomcat
 CMD ["catalina.sh", "run"]
+
 
