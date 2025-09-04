@@ -19,4 +19,4 @@ ENV PORT=8080
 EXPOSE ${PORT}
 
 # Fix shutdown port + đổi cổng 8080 sang $PORT rồi chạy Tomcat
-CMD ["sh", "-c", "sed -i 's/port=\"8005\"/port=\"-1\"/' conf/server.xml && sed -i 's/8080/${PORT}/' conf]()
+CMD ["sh", "-c", "sed -i 's/port=\"8005\"/port=\"-1\"/' conf/server.xml && sed -i 's/8080/${PORT}/' conf/server.xml && catalina.sh run"]
