@@ -1,9 +1,14 @@
-# Sử dụng JDK 17
-FROM openjdk:17-jdk-slim
+# Sử dụng Tomcat 9 với JDK 17
+FROM tomcat:9.0-jdk17
 
-# Copy source hoặc build trước rồi copy JAR
-WORKDIR /app
-COPY target/week3.jar app.jar
+# Xóa ứng dụng mặc định của Tomcat (ROOT)
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Chạy app
-CMD ["java", "-jar", "app.jar"]
+# Copy file WAR vào thư mục webapps
+COPY target/week3.war /usr/local/tomcat/webapps/ROOT.war
+
+# Tomcat sẽ tự động deploy ROOT.war khi container khởi động
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
+
